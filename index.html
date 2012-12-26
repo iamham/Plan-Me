@@ -15,62 +15,32 @@
 
 <body> 
 
-<div data-role="page" data-theme="b">
+<div data-role="page" data-theme="a">
 		<div data-role="content" style="padding:0;">	
 			<div id="iwrapper">
             	<div id="cloud"></div>
             	<div id="logo"></div>
         		<div id="index_plant"></div>
-        		
-                <div id="menu">
-        <ul>
-        	<li><a href="#">Home</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a data-ajax="false" href="map.html">Map</a></li>
-            <li><a href="event.html">Event</a></li>
-            <li><a href="help.html">Help</a></li>
-        </ul>
-        </div>
-            </div>
+                </div>
 	</div>
     <!-- /content -->
     <div data-position="fixed">
     	<div id="menu">
+        <div id="nav">
         <ul>
         	<li><a href="#">Home</a></li>
             <li><a href="profile.html">Profile</a></li>
-            <li><a href="map.html">Map</a></li>
+            <li><a href="map.html" data-ajax="false">Map</a></li>
             <li><a href="event.html">Event</a></li>
             <li><a href="help.html">Help</a></li>
         </ul>
+        </div>
         </div>
         </div>
     </div>
     
 	
 </div><!-- /page -->
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDENz7Ef03xmpADIFxiK2CCAtwKyEc1m-U&sensor=true"></script>
-	<script src="jquery.ui.map.js"></script>
-    <script src="jquery.ui.map.overlays.js"></script>
-    <script src="jquery.ui.map.extensions.js"></script>
-    <script>
-        $('#map_canvas').gmap({'disableDefaultUI':true}).bind('init', function(evt, map) {
-		$('#map_canvas').gmap('getCurrentPosition', function(position, status) {
-		if ( status === 'OK' ) {
-			var clientPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-			$('#map_canvas').gmap('addMarker', {'position': clientPosition, 'bounds': true});
-			$('#map_canvas').gmap('option', 'zoom', 16);
-			$('#map_canvas').gmap('addShape', 'Circle', { 
-				'strokeWeight': 0, 
-				'fillColor': "#008595", 
-				'fillOpacity': 0.25, 
-				'center': clientPosition, 
-				'radius': 15, 
-				'clickable': false 
-			});
-		}else{alert("Cannot get your current position.")};
-	});   
-});
-        </script>
+
 </body>
 </html>
